@@ -8,7 +8,7 @@
 
 namespace molukaka;
 
-require_once 'app/models/test_file.php';
+require 'vendor/autoload.php';
 
 // OUR MAIN CLASS
 class Intern extends Employee {
