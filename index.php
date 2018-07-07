@@ -11,7 +11,7 @@ namespace molukaka;
 require 'vendor/autoload.php';
 
 // OUR MAIN CLASS
-class Intern extends Employee {
+class Intern extends Employee implements Work {
 
     use Human;
 
