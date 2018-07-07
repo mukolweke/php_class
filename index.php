@@ -8,60 +8,7 @@
 
 namespace molukaka;
 
-//interface class
-interface Work{
-
-    public function setTimeGetToWork($time);
-    public function setTimeLeftWork($time);
-    public function getTimeGetToWork();
-    public function getTimeLeftWork();
-
-}
-
-
-// trait
-trait Human{
-
-    private $skinColor;
-    private $location;
-
-    public function setPlaceOfBirth($location){
-        $this->location = $location;
-    }
-
-    function getPlaceOfBirth(){
-        echo $this->location;
-    }
-
-    public function setSkinColor($color){
-        $this->skinColor = $color;
-    }
-
-    public function getSkinColor(){
-
-        echo $this->skinColor;
-    }
-}
-
-//abstract class and methods; inheritance and implementations
-abstract class Employee implements Work {
-
-    public $name;
-    public $department;
-    public $salary;
-
-    abstract function setName($name);
-    abstract function getName();
-    abstract function setDepartment($department);
-    abstract function getDepartment();
-    abstract function setSalary($salary);
-    abstract function getSalary();
-    public function __toString(){
-        echo 'I am an Employee';
-    }
-
-}
-
+require_once 'app/models/test_file.php';
 
 // OUR MAIN CLASS
 class Intern extends Employee {
@@ -108,17 +55,17 @@ class Intern extends Employee {
 
     public function getName()
     {
-        echo $this->name;
+        echo $this->name."<br>";
     }
 
     public function getSalary()
     {
-        echo $this->salary;
+        echo $this->salary."<br>";
     }
 
     public function getDepartment()
     {
-        echo $this->department;
+        echo $this->department."<br>";
     }
 
     public function __toString()
@@ -130,9 +77,41 @@ class Intern extends Employee {
 // our object
 $intern1 = new Intern();
 $intern1->setName("Michael Mukolwe");
+$intern1->setDepartment('Cytonn Technologies');
+$intern1->setSalary('20,000 KSH');
 $intern1->setTimeGetToWork('7:30AM');
 $intern1->setTimeLeftWork('8:30PM');
 $intern1->setPlaceOfBirth('Nakuru');
 $intern1->setSkinColor('Brown Skin');
-//echo($intern1->__toString());
+
+$intern2 = new Intern();
+$intern2->setName("James Warner");
+$intern2->setDepartment('Cytonn Distributions');
+$intern2->setSalary('23,000 KSH');
+$intern2->setTimeGetToWork('7:30AM');
+$intern2->setTimeLeftWork('8:30PM');
+$intern2->setPlaceOfBirth('Nairobi');
+$intern2->setSkinColor('Pale Brown Skin');
+
+echo 'Interns Details: <br><br>';
+echo "Intern 1::<br>";
+$intern1->getName();
+$intern1->getDepartment();
+$intern1->getSalary();
+echo '<br>';
+echo "Description::<br>";
 $intern1->getSkinColor();
+$intern1->getPlaceOfBirth();
+$intern1->getTimeGetToWork();
+$intern1->getTimeLeftWork();
+echo '<br><hr>';
+echo 'Intern 2::<br>';
+$intern2->getName();
+$intern2->getDepartment();
+$intern2->getSalary();
+echo '<br>';
+echo "Description::<br>";
+$intern2->getSkinColor();
+$intern2->getPlaceOfBirth();
+$intern2->getTimeGetToWork();
+$intern2->getTimeLeftWork();
