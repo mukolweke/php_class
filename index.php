@@ -9,7 +9,7 @@
 namespace molukaka;
 
 //interface class
-interface Person{
+interface Work{
 
     public function setTimeGetToWork($time);
     public function setTimeLeftWork($time);
@@ -44,7 +44,7 @@ trait Human{
 }
 
 //abstract class and methods; inheritance and implementations
-abstract class Employee implements Person {
+abstract class Employee implements Work {
 
     public $name;
     public $department;
@@ -56,7 +56,9 @@ abstract class Employee implements Person {
     abstract function getDepartment();
     abstract function setSalary($salary);
     abstract function getSalary();
-    abstract function __toString();
+    public function __toString(){
+        echo 'I am an Employee';
+    }
 
 }
 
